@@ -1,0 +1,11 @@
+<view class="welcome">
+  <view class="welcomeWord">
+    <view>欢迎使用毕业贺卡</view>
+    <view>您可以合成毕业祝福贺卡送给那个Ta</view>
+  </view>
+  <view class="form">
+  <input type="name" placeholder="请输入您的署名"></input>
+  <input type="class" placeholder="请输入您的学院或班级"></input>
+  <button class="startBtn">开始创作吧</button>
+  </view>
+</view>
