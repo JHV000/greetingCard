@@ -17,6 +17,11 @@ Page({
     })
     // console.log(this.data.name)
   },
+  goNext(){
+    wx.navigateTo({
+      url: '../main/main?name=' + this.data.name + '&class=' + this.data.class,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
