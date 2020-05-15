@@ -1,9 +1,12 @@
 {
   "pages": [
+    "pages/main/main",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/main/main",
+    
+    "pages/combin/combin",
     "components/taglist/taglist"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

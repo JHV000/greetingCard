@@ -1,0 +1,8 @@
+/* pages/combin/combin.wxss */
+.intro {
+  text-align: center;
+}
+
+.my_canvas{
+  display: none;
+}

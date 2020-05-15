@@ -84,7 +84,7 @@ Component({
           // that.setData({
           //   mes : res.data
           // })
-          that.triggerEvent('showmessage', res.data)
+          that.triggerEvent('showmessage', [res.data,tag])
           // console.log(mes)
           // console.log(tag)
         }
