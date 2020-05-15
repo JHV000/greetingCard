@@ -1,0 +1,80 @@
+/* components/taglist/taglist.wxss */
+.cu-tag {
+	font-size: 1rem;
+	vertical-align: middle;
+	/* align-items: center; */
+	/* height: 1rem; */
+  /* width: 2rem; */
+  padding: 0.6rem;
+  margin: 0.5rem;
+  border: 1px solid #e1e1e1;
+  color: #aaa7a7;
+  border-radius: 10px;
+	font-family: Helvetica Neue, Helvetica, sans-serif;
+	white-space: nowrap;
+}
+.tag-box {
+  display: flex;
+  margin:  0 auto;
+  justify-content: center;
+  width: 95%;
+  flex-wrap: wrap;
+}
+.red {
+	background-color: #e54d42;
+	color: #ffffff;
+}
+
+.orange {
+	background-color: #f37b1d;
+	color: #ffffff;
+}
+
+.yellow {
+	background-color: #fbbd08;
+	color: #ffffff;
+}
+
+.olive {
+	background-color: #8dc63f;
+	color: #ffffff;
+}
+
+.green {
+	background-color: #39b54a;
+	color: #ffffff;
+}
+
+.cyan {
+	background-color: #1cbbb4;
+	color: #ffffff;
+}
+
+.blue {
+	background-color: #0081ff;
+	color: #ffffff;
+}
+
+.purple {
+	background-color: #6739b6;
+	color: #ffffff;
+}
+
+.to {
+  color: #e1e1e1;
+  padding: 1rem;
+  position: relative;
+  /* width: 6rem; */
+}
+
+.to::after {
+  content: '';
+  width: 60%;
+  position: absolute;
+  background-color: #e1e1e1;
+  height: 1px;
+  left: 0px;
+  right: 0px;
+  bottom: 5px;
+  margin: 0 auto;
+}

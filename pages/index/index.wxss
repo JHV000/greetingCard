@@ -24,3 +24,8 @@ form input {
 .startBtn {
   width: 100%;
 }
+.alert {
+  font-size: 14px;
+  color: #757272;
+  padding: 2rem;
+}

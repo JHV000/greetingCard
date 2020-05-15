@@ -1,0 +1,6 @@
+<view class="to {{color}}">致那个TA</view>
+  <view class="tag-box">
+    <view wx:for="{{ColorList}}" wx:key="index">
+      <view data-color="{{item.name}}" data-tag="{{item.tag}}"  class="cu-tag {{color === item.name?color:''}}" bindtap="getTag">{{item.title}}</view>
+    </view>
+  </view>

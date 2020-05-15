@@ -1,1 +1,7 @@
 /* pages/main/main.wxss */
+
+.choose {
+  text-align: center;
+}
+
+

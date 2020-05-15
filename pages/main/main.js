@@ -5,19 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name:'',
-    class:''
+    name: '匿名',
+    class: '山东理工大学',
+    mes:''
   },
-
+  showmessage(res) {
+    this.setData({
+      mes : res.detail
+    })
+    console.log(res.detail)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-var that = this;
-that.setData({
-  name : options.name,
-  class : options.class
-})
+    var that = this;
+    that.setData({
+      name: options.name,
+      class: options.class
+    })
   },
 
   /**

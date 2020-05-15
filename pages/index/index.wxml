@@ -3,9 +3,12 @@
     <view>欢迎使用毕业贺卡</view>
     <view>您可以合成毕业祝福贺卡送给那个Ta</view>
   </view>
+  <view class="form">
   <form bindsubmit="getInfo">
   <input name="name" type="text" placeholder="请输入您的署名" value=""></input>
   <input name="class" type="text" placeholder="请输入您的学院或班级" value=""></input>
   <button formType="submit" bindtap="goNext" class="startBtn">开始创作吧</button>
   </form>
+  </view>
+  <view class="alert">当然您也可以匿名哦</view>
 </view>

@@ -1,2 +1,7 @@
-<view>{{ name }}</view>
-<view>{{ class }}</view>
+<!-- <view>{{ name }}</view>
+<view>{{ class }}</view> -->
+<view class="choose">
+
+<tag bindshowmessage="showmessage"></tag>
+</view>
+<view>{{mes}}</view>
