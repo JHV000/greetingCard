@@ -7,19 +7,19 @@ Page({
   data() {
     return {
       name:'',
-      class:''
+      uclass:''
     }
   },
   getInfo(e) {
     this.setData({
       name: e.detail.value.name,
-      class: e.detail.value.class
+      uclass: e.detail.value.uclass
     })
     // console.log(this.data.name)
   },
   goNext(){
     wx.navigateTo({
-      url: '../main/main?name=' + this.data.name + '&class=' + this.data.class,
+      url: '../main/main?name=' + this.data.name + '&uclass=' + this.data.uclass,
     })
   },
   /**

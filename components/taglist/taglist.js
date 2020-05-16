@@ -63,16 +63,36 @@ Component({
 
   methods: {
     // 这里是一个自定义方法
+    getNew(){
+      var tag = this.data.tag
+      var that = this
+      wx.request({
+        method: "POST",
+        url: 'https://honghong520.xyz/heka/heka.php',
+        data: {
+          op: "request",
+          tag
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded' // 默认值
+        },
+        success(res) {
+          that.triggerEvent('showmessage', [res.data, tag])
+        }
+    })
+      
+    },
     getTag(e) {
       var tag = e.currentTarget.dataset.tag
       var that = this
       // var op
       this.setData({
-        color: e.currentTarget.dataset.color
+        color: e.currentTarget.dataset.color,
+        tag:tag
       })
       wx.request({
         method: "POST",
-        url: 'http://119.29.106.231:84/num.php',
+        url: 'https://honghong520.xyz/heka/heka.php',
         data: {
           op: "request",
           tag

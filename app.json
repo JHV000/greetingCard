@@ -1,10 +1,9 @@
 {
   "pages": [
-    
+        
     "pages/index/index",
     "pages/logs/logs",
-    "pages/main/main",
-    "pages/combin/combin",
+"pages/main/main",
     "components/taglist/taglist"
     
   ],

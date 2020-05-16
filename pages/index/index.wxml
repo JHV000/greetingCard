@@ -7,7 +7,7 @@
   <view class="form">
   <form bindsubmit="getInfo">
   <input name="name" type="text" placeholder="请输入您的署名" value=""></input>
-  <input name="class" type="text" placeholder="请输入您的学院或班级" value=""></input>
+  <input name="uclass" type="text" placeholder="请输入您的学院或班级" value=""></input>
   <button formType="submit" bindtap="goNext" class="startBtn">开始创作吧</button>
   </form>
   </view>

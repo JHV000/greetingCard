@@ -5,13 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: '匿名',
-    class: '山东理工大学',
+    name: "",
+    uclass: '',
     mes: '',
     tag: '',
-    width: 0,
-    height: 0,
     img: '/static/img/teacher.jpg'
+  },
+  getNew(){
+    this.selectComponent('#tag').getNew()
   },
   showmessage(res) {
     var that = this
@@ -21,7 +22,7 @@ Page({
 
     })
     that.listen()
-    // console.log(that.data.img)
+    // console.log(that.data.mes)
   },
   listen() {
     var that = this
@@ -68,23 +69,12 @@ Page({
     }
     that.canvasImg()
   },
-  getWh() {
-    var that = this
-    wx.createSelectorQuery().selectAll('.myCancas').boundingClientRect(function (rects) {
-      that.setData({
-        width: rects[0].width,
-        height: rects[0].height
-      })
-      console.log("赋值为"+that.data.width)
-    }).exec();
-    
-  },
   canvasImg() {
-    this.getWh()
-    console.log("调用地方为"+this.data.width)
+    // this.getWh()
+    // console.log("调用地方为"+this.data.width)
     const ctx = wx.createCanvasContext('myCanvas');
-    ctx.fillRect(0, 0, this.data.width, this.data.height);
-    ctx.drawImage(this.data.img, 0, 0, this.data.width, this.data.height);   //里面的参数无非就是图片放置的位置即图片的横纵坐标，图片的宽高
+    ctx.fillRect(0, 0, 300, 500);
+    ctx.drawImage(this.data.img, 0, 0, 300, 500);   //里面的参数无非就是图片放置的位置即图片的横纵坐标，图片的宽高
     var text = this.data.mes;
     var chr = text.split("");//这个方法是将一个字符串分割成字符串数组
     var temp = "";
@@ -122,29 +112,42 @@ Page({
       row = rowCut;
     }
     for (var b = 0; b < row.length; b++) {
-      ctx.fillText(row[b], 50, 250 + b * 30, 205);
+      ctx.fillText(row[b], 50, 310 + b * 30, 205);
     }
-
+    ctx.fillText(this.data.name, 150, 430, 205);
+    ctx.fillText(this.data.uclass, 150, 460, 205);
     ctx.draw();
   },
   saveImg() {
+    console.log(this.data.tag)
+    var tag = this.data.tag
     wx.canvasToTempFilePath({
       x: 0,
       y: 0,
       width: 300,                     //画布宽高
-      height: 400,
-      destWidth: 600,                 //画布宽高*dpr 以iphone6为准
-      destHeight: 800,
+      height: 500,
+      destWidth: 900,                 //画布宽高*dpr 以iphone6为准
+      destHeight: 1500,
       canvasId: 'myCanvas',
       success: function (res) {
-        console.log(res.tempFilePath) //生成的临时图片路径
         wx.saveImageToPhotosAlbum({
           filePath: res.tempFilePath,
           success: function (res) {
-            console.log(res);
+            // console.log(res);
+           
             wx.showToast({
-              title: '保存成功',
+              title: '保存成功！'
             })
+          }
+        })
+        
+
+        wx.request({
+          method: "POST",
+          url: 'https://honghong520.xyz/heka/heka.php',
+          data: {
+            op: "query",
+            tag
           }
         })
       }
@@ -154,11 +157,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    that.setData({
-      name: options.name,
-      class: options.class
-    })
+   
+      this.setData({
+        name: options.name,
+        uclass: options.uclass
+      })
+    
+    
+    // console.log(options)
     this.canvasImg()
   },
 

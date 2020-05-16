@@ -1,8 +1,12 @@
 <!-- <view>{{ name }}</view>
 <view>{{ class }}</view> -->
 <view class="choose">
-<tag bindshowmessage="showmessage"></tag>
+<tag id="tag" bindshowmessage="showmessage"></tag>
 </view>
 <canvas class="myCancas" canvas-id="myCanvas"/>
-<button bindtap='saveImg'>保存</button>
+<view>
+<button bindtap='getNew'  type="primary">换一换</button>
+<button bindtap='saveImg' type="primary">保存</button>
+</view>
+
 <!-- <view>{{mes}}</view> -->
