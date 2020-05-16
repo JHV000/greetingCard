@@ -9,7 +9,7 @@ Page({
     class: '山东理工大学',
     mes:'',
     tag:'',
-    img:''
+    img:'/static/img/teacher.jpg'
   },
   showmessage(res) {
     var that = this
@@ -52,7 +52,7 @@ Page({
     }
     if (that.data.tag === 'suguan') {
       this.setData({
-        img: '/static/img/suguan.jpg'
+        img: '/static/img/aunt.jpg'
       })
     }
     if (that.data.tag === 'driver') {
