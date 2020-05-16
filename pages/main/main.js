@@ -7,24 +7,25 @@ Page({
   data: {
     name: '匿名',
     class: '山东理工大学',
-    mes:'',
-    tag:'',
-    img:'/static/img/teacher.jpg'
+    mes: '',
+    tag: '',
+    width: 0,
+    height: 0,
+    img: '/static/img/teacher.jpg'
   },
   showmessage(res) {
     var that = this
     this.setData({
-      mes : res.detail[0],
-      tag : res.detail[1],
-      
+      mes: res.detail[0],
+      tag: res.detail[1],
+
     })
     that.listen()
-   
-    console.log(that.data.img)
+    // console.log(that.data.img)
   },
-  listen(){
+  listen() {
     var that = this
-    if(that.data.tag === 'teacher'){
+    if (that.data.tag === 'teacher') {
       this.setData({
         img: '/static/img/teacher.jpg'
       })
@@ -67,14 +68,63 @@ Page({
     }
     that.canvasImg()
   },
+  getWh() {
+    var that = this
+    wx.createSelectorQuery().selectAll('.myCancas').boundingClientRect(function (rects) {
+      that.setData({
+        width: rects[0].width,
+        height: rects[0].height
+      })
+      console.log("赋值为"+that.data.width)
+    }).exec();
+    
+  },
   canvasImg() {
+    this.getWh()
+    console.log("调用地方为"+this.data.width)
     const ctx = wx.createCanvasContext('myCanvas');
-    ctx.fillRect(0, 0, 300, 400);
-    ctx.drawImage(this.data.img, 0, 0, 300, 400);   //里面的参数无非就是图片放置的位置即图片的横纵坐标，图片的宽高
+    ctx.fillRect(0, 0, this.data.width, this.data.height);
+    ctx.drawImage(this.data.img, 0, 0, this.data.width, this.data.height);   //里面的参数无非就是图片放置的位置即图片的横纵坐标，图片的宽高
+    var text = this.data.mes;
+    var chr = text.split("");//这个方法是将一个字符串分割成字符串数组
+    var temp = "";
+    var row = [];
     ctx.setFillStyle("#000");
     ctx.setFontSize(20);                               //字大小
-    ctx.setTextAlign('center');                        //是否居中显示，参考点画布中线
-    ctx.fillText(this.data.mes, 150, 280);            //150:canvas画布宽300，取1/2，中间，280：纵向位置
+    ctx.setTextAlign('left');
+    for (var a = 0; a < chr.length; a++) {
+      if (ctx.measureText(temp).width < 250) {
+        temp += chr[a];
+      }
+      else {
+        a--; //这里添加了a-- 是为了防止字符丢失，效果图中有对比
+        row.push(temp);
+        temp = "";
+      }
+    }
+    row.push(temp);
+    if (row.length > 10) {
+      var rowCut = row.slice(0, 2);
+      var rowPart = rowCut[1];
+      var test = "";
+      var empty = [];
+      for (var a = 0; a < rowPart.length; a++) {
+        if (ctx.measureText(test).width < 220) {
+          test += rowPart[a];
+        }
+        else {
+          break;
+        }
+      }
+      empty.push(test);
+      var group = empty[0] + "..."//这里只显示两行，超出的用...表示
+      rowCut.splice(1, 1, group);
+      row = rowCut;
+    }
+    for (var b = 0; b < row.length; b++) {
+      ctx.fillText(row[b], 50, 250 + b * 30, 205);
+    }
+
     ctx.draw();
   },
   saveImg() {
