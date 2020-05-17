@@ -4,22 +4,10 @@ Page({
   /**
    * 页面的初始数据
    */
-  data() {
-    return {
-      name:'',
-      uclass:''
-    }
-  },
-  getInfo(e) {
-    this.setData({
-      name: e.detail.value.name,
-      uclass: e.detail.value.uclass
-    })
-    // console.log(this.data.name)
-  },
-  goNext(){
+  goNext(e){
+    console.log(e.detail.value)
     wx.navigateTo({
-      url: '../main/main?name=' + this.data.name + '&uclass=' + this.data.uclass,
+      url: '../main/main?name=' + e.detail.value.name + '&uclass=' + e.detail.value.uclass,
     })
   },
   /**
