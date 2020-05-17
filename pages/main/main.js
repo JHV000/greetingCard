@@ -119,7 +119,7 @@ Page({
     ctx.draw();
   },
   saveImg() {
-    console.log(this.data.tag)
+    // console.log(this.data.tag)
     var tag = this.data.tag
     wx.canvasToTempFilePath({
       x: 0,
@@ -142,14 +142,7 @@ Page({
         })
         
 
-        wx.request({
-          method: "POST",
-          url: 'https://honghong520.xyz/heka/heka.php',
-          data: {
-            op: "query",
-            tag
-          }
-        })
+       
       }
     })
   },
