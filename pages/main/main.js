@@ -9,7 +9,69 @@ Page({
     uclass: '',
     mes: '',
     tag: '',
-    img: '/static/img/teacher.jpg'
+    id:0,
+    img: '/static/img/teacher.jpg',
+    imgArr:[
+      {
+        imgUrl: '/static/img/teacher.jpg',
+        id:0
+      },
+      {
+        imgUrl: '/static/img/tutor.jpg',
+        id: 1
+      },
+      {
+        imgUrl: '/static/img/myself.jpg',
+        id: 2
+      },
+
+      {
+        imgUrl: '/static/img/roommate.jpg',
+        id: 3
+      },
+      {
+        imgUrl: '/static/img/lover.jpg',
+        id: 4
+      },
+
+      {
+        imgUrl: '/static/img/suguan.jpg',
+        id: 5
+      },
+      {
+        imgUrl: '/static/img/driver.jpg',
+        id: 6
+      },
+      {
+        imgUrl: '/static/img/freshmen.jpg',
+        id: 7
+      },
+      {
+        imgUrl: '/static/img/classmates.jpg',
+        id: 8
+      },
+      {
+        imgUrl: '/static/img/friends.jpg',
+        id: 9
+      },
+      {
+        imgUrl: '/static/img/cook.jpg',
+        id: 10
+      },
+      {
+        imgUrl: '/static/img/waimai.jpg',
+        id: 11
+      },
+
+      {
+        imgUrl: '/static/img/leader.jpg',
+        id: 12
+      },
+      {
+        imgUrl: '/static/img/baoan.jpg',
+        id: 13
+      },
+    ]
   },
   getNew(){
     this.selectComponent('#tag').getNew()
@@ -19,55 +81,20 @@ Page({
     this.setData({
       mes: res.detail[0],
       tag: res.detail[1],
+      id: res.detail[2]
 
     })
     that.listen()
     // console.log(that.data.mes)
   },
   listen() {
-    var that = this
-    if (that.data.tag === 'teacher') {
-      this.setData({
-        img: '/static/img/teacher.jpg'
-      })
-    }
-    if (that.data.tag === 'tutor') {
-      this.setData({
-        img: '/static/img/tutor.jpg'
-      })
-    }
-    if (that.data.tag === 'myself') {
-      this.setData({
-        img: '/static/img/myself.jpg'
-      })
-    }
-    if (that.data.tag === 'roommate') {
-      this.setData({
-        img: '/static/img/roommate.jpg'
-      })
-    }
-
-    if (that.data.tag === 'lover') {
-      this.setData({
-        img: '/static/img/lover.jpg'
-      })
-    }
-    if (that.data.tag === 'suguan') {
-      this.setData({
-        img: '/static/img/aunt.jpg'
-      })
-    }
-    if (that.data.tag === 'driver') {
-      this.setData({
-        img: '/static/img/driver.jpg'
-      })
-    }
-    if (that.data.tag === 'freshmen') {
-      this.setData({
-        img: '/static/img/freshmen.jpg'
-      })
-    }
-    that.canvasImg()
+    var id = this.data.id
+    this.setData({
+      img :this.data.imgArr[id].imgUrl
+    })
+  //  console.log(this.data.img)
+    
+    this.canvasImg()
   },
   canvasImg() {
     // this.getWh()
@@ -134,17 +161,33 @@ Page({
           filePath: res.tempFilePath,
           success: function (res) {
             // console.log(res);
-           
             wx.showToast({
               title: '保存成功！'
             })
+           
           }
-        })
-        
-
-       
+        })  
+      }
+      
+    })
+    this.count()
+  },
+  count(){
+    wx.request({
+      method: "POST",
+      url: 'https://honghong520.xyz/heka/heka.php',
+      data: {
+        op: "add",
+        tag:this.data.tag
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success(res){
+        // console.log(res)
       }
     })
+   
   },
   /**
    * 生命周期函数--监听页面加载
@@ -206,7 +249,11 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (options) {
+    return {
+      title:'毕业贺卡',
+      desc:'一起来送上你的祝福吧',
+      imageUrl:'/static/img/share.jpg'
+    }
   }
 })

@@ -59,6 +59,30 @@
 	background-color: #6739b6;
 	color: #ffffff;
 }
+.xing {
+	background-color: #009ad6;
+	color: #ffffff;
+}
+.hong {
+	background-color: #fa897b;
+	color: #ffffff;
+}
+.qing {
+	background-color: #08f586;
+	color: #ffffff;
+}
+.zi {
+	background-color: #871db8;
+	color: #ffffff;
+}
+.cheng {
+	background-color: #f8ab04;
+	color: #ffffff;
+}
+.zong {
+	background-color: #a8f50d;
+	color: #ffffff;
+}
 
 .to {
   /* color: #e1e1e1; */
