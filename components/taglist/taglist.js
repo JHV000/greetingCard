@@ -58,7 +58,6 @@ Component({
         id: 6
         // color: '#8dc63f'
       },
-
       {
         title: '致学弟学妹',
         name: 'blue',
@@ -66,7 +65,6 @@ Component({
         id:7
         // color: '#0081ff'
       },
-
       {
         title: '致同班同学',
         name: 'qing',
@@ -74,7 +72,6 @@ Component({
         id: 8
         // color: '#0081ff'
       },
-
       {
         title: '致朋友',
         name: 'zong',
@@ -82,7 +79,6 @@ Component({
         id: 9
         // color: '#0081ff'
       },
-
       {
         title: '致食堂阿姨',
         name: 'cheng',
@@ -90,7 +86,6 @@ Component({
         id: 10
         // color: '#0081ff'
       },
-
       {
         title: '致外卖小哥',
         name: 'hong',
@@ -98,7 +93,6 @@ Component({
         id: 11
         // color: '#0081ff'
       },
-
       {
         title: '致班委',
         name: 'zi',
@@ -106,7 +100,6 @@ Component({
         id: 12
         // color: '#0081ff'
       },
-
       {
         title: '致门卫大爷',
         name: 'xing',

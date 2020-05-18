@@ -1,6 +1,5 @@
 // pages/main/main.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -24,7 +23,6 @@ Page({
         imgUrl: '/static/img/myself.jpg',
         id: 2
       },
-
       {
         imgUrl: '/static/img/roommate.jpg',
         id: 3
@@ -33,7 +31,6 @@ Page({
         imgUrl: '/static/img/lover.jpg',
         id: 4
       },
-
       {
         imgUrl: '/static/img/suguan.jpg',
         id: 5
@@ -62,7 +59,6 @@ Page({
         imgUrl: '/static/img/waimai.jpg',
         id: 11
       },
-
       {
         imgUrl: '/static/img/leader.jpg',
         id: 12
@@ -82,7 +78,6 @@ Page({
       mes: res.detail[0],
       tag: res.detail[1],
       id: res.detail[2]
-
     })
     that.listen()
     // console.log(that.data.mes)
@@ -93,7 +88,6 @@ Page({
       img :this.data.imgArr[id].imgUrl
     })
   //  console.log(this.data.img)
-    
     this.canvasImg()
   },
   canvasImg() {
@@ -193,13 +187,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
       this.setData({
         name: options.name,
         uclass: options.uclass
       })
-    
-    
     // console.log(options)
     this.canvasImg()
   },

@@ -1,16 +1,16 @@
 <view class="index">
-<view class="welcome">
-  <view class="welcomeWord">
-    <view>欢迎使用毕业贺卡</view>
-    <view>您可以合成毕业祝福贺卡送给那个Ta</view>
-  </view>
-  <view class="form">
-  <form bindsubmit="goNext">
-  <input name="name" type="text" placeholder="请输入您的署名" value=""></input>
-  <input name="uclass" type="text" placeholder="请输入您的学院或班级" value=""></input>
-  <button formType="submit" class="startBtn">开始创作吧</button>
-  </form>
-  </view>
-  <view class="alert">当然您也可以匿名哦</view>
-</view>
+	<view class="welcome">
+		<view class="welcomeWord">
+			<view>欢迎使用毕业贺卡</view>
+			<view>您可以合成毕业祝福贺卡送给那个Ta</view>
+		</view>
+		<view class="form">
+			<form bindsubmit="goNext">
+				<input name="name" type="text" placeholder="请输入您的署名" value=""></input>
+				<input name="uclass" type="text" placeholder="请输入您的学院或班级" value=""></input>
+				<button formType="submit" class="startBtn">开始创作吧</button>
+			</form>
+		</view>
+		<view class="alert">当然您也可以匿名哦</view>
+	</view>
 </view>
