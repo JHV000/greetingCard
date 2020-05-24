@@ -91,6 +91,9 @@ Page({
     this.canvasImg()
   },
   canvasImg() {
+    wx.showLoading({
+      title: '贺卡正在处理中...请稍后',
+    })
     // this.getWh()
     // console.log("调用地方为"+this.data.width)
     const ctx = wx.createCanvasContext('myCanvas');
@@ -138,6 +141,7 @@ Page({
     ctx.fillText(this.data.name, 150, 430, 205);
     ctx.fillText(this.data.uclass, 150, 460, 205);
     ctx.draw();
+    wx.hideLoading();
   },
   saveImg() {
     // console.log(this.data.tag)

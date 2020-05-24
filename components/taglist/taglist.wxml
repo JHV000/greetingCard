@@ -1,6 +1,7 @@
 <view class="to {{color}}">致那个TA</view>
-  <view class="tag-box">
-    <view wx:for="{{ColorList}}" wx:key="index">
-      <view data-color="{{item.name}}" data-id="{{item.id}}" data-tag="{{item.tag}}"  class="cu-tag {{color === item.name?color:''}}" bindtap="getTag">{{item.title}}</view>
-    </view>
-  </view>
+<scroll-view class="tag-box" scroll-x="true" style="height: 60px;">
+	<view style="width:100%;height:15px"></view>
+	<view wx:for="{{ColorList}}" wx:key="index" style="display:inline;height:100px">
+		<view data-color="{{item.name}}"  style="display:inline" data-id="{{item.id}}" data-tag="{{item.tag}}" class="cu-tag {{color === item.name?color:''}}" bindtap="getTag">{{item.title}}</view>
+	</view>
+</scroll-view>
