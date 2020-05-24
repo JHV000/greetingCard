@@ -92,7 +92,7 @@ Page({
   },
   canvasImg() {
     wx.showLoading({
-      title: '贺卡正在处理中...请稍后',
+      title: '处理中...请稍后',
     })
     // this.getWh()
     // console.log("调用地方为"+this.data.width)
@@ -173,7 +173,7 @@ Page({
   count(){
     wx.request({
       method: "POST",
-      url: 'https://honghong520.xyz/heka/heka.php',
+      url: 'https://youthapi.sdut.edu.cn/api/graduationgreetingcard',
       data: {
         op: "add",
         tag:this.data.tag

@@ -118,7 +118,7 @@ Component({
       var that = this
       wx.request({
         method: "POST",
-        url: 'https://honghong520.xyz/heka/heka.php',
+        url: 'https://youthapi.sdut.edu.cn/api/graduationgreetingcard',
         data: {
           op: "request",
           tag
@@ -149,7 +149,7 @@ Component({
       })
       wx.request({
         method: "POST",
-        url: 'https://honghong520.xyz/heka/heka.php',
+        url: 'https://youthapi.sdut.edu.cn/api/graduationgreetingcard',
         data: {
           op: "request",
           tag
