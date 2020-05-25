@@ -43,3 +43,13 @@ form input {
   color: #757272;
   padding: 2rem;
 }
+.footer {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px;
+  margin: 0 auto;
+  color: #757272;
+}

@@ -248,7 +248,8 @@ Page({
     return {
       title:'毕业贺卡',
       desc:'一起来送上你的祝福吧',
-      imageUrl:'/static/img/share.jpg'
+      imageUrl:'/static/img/share.jpg',
+      path:'/pages/index/index'
     }
   }
 })
