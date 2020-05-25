@@ -32,7 +32,7 @@ Page({
         id: 4
       },
       {
-        imgUrl: '/static/img/suguan.jpg',
+        imgUrl: '/static/img/aunt.jpg',
         id: 5
       },
       {
